@@ -1,10 +1,25 @@
-// import Character from './Character';
-// import Monster from './Monster';
+import Battle, { PVE, PVP } from './Battle';
+import Character from './Character';
+import Dragon from './Dragon';
+import Monster from './Monster';
 
-// const character = new Character('Gandalf');
-// const monster = new Monster(100, 50);
+const player1 = new Character('Vinicius');
+const player2 = new Character('Roberta');
+const player3 = new Character('Joanna');
 
-// character.attack(monster);
-// monster.attack(character);
+const monster1 = new Monster();
+const monster2 = new Dragon();
 
-// export { character, monster };
+const pvp = new PVP(player2, player3);
+const pve = new PVE(player1, [monster1, monster2]);
+
+player1.levelUp();
+player1.levelUp();
+player1.levelUp();
+player1.levelUp();
+
+function runBattles(battles: Battle[]): void {
+  battles.forEach((b) => b.fight());
+}
+
+export { player1, player2, player3, monster1, monster2, pvp, pve, runBattles };
