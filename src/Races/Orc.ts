@@ -10,7 +10,7 @@ export default class Orc extends Race {
   }
 
   static createdRacesInstances(): number {
-    return Orc._createInstances;
+    return this._createInstances;
   }
 
   get maxLifePoints(): number {

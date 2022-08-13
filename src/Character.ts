@@ -60,7 +60,7 @@ export default class Character implements Fighter {
 
   get energy(): Energy {
     return {
-      type_: this._archetype.energyType,
+      type_: this._energy.type_,
       amount: this._energy.amount,
     };
   }
@@ -77,11 +77,8 @@ export default class Character implements Fighter {
     this._lifePoints = this._maxLifePoints;
   }
 
-  attack(enemy: SimpleFighter): number {
-    const damage = this._strength;
-    enemy.receiveDamage(damage);
-    this._energy.amount = 0;
-    return damage;
+  attack(enemy: SimpleFighter): void {
+    enemy.receiveDamage(this._strength);
   }
 
   receiveDamage(attackPoints: number): number {

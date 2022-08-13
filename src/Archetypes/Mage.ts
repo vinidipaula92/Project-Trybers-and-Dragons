@@ -12,7 +12,7 @@ export default class Mage extends Archetype {
   }
 
   static createdArchetypeInstances(): number {
-    return Mage._energyAmount;
+    return this._energyAmount;
   }
 
   get energyType(): EnergyType {

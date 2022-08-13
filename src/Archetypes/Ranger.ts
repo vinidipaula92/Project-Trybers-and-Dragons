@@ -12,7 +12,7 @@ export default class Ranger extends Archetype {
   }
 
   static createdArchetypeInstances(): number {
-    return Ranger._energyAmount;
+    return this._energyAmount;
   }
 
   get energyType(): EnergyType {
